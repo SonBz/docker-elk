@@ -1,0 +1,299 @@
+2021-12-24 00:19:47.341  INFO 16584 --- [restartedMain] com.iisi.Application                     : Starting Application on LAPTOP-VD4QMPKA with PID 16584 (E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source\target\classes started by ADMIN in E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source)
+2021-12-24 00:19:47.341 DEBUG 16584 --- [restartedMain] com.iisi.Application                     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-12-24 00:19:47.341  INFO 16584 --- [restartedMain] com.iisi.Application                     : No active profile set, falling back to default profiles: default
+2021-12-24 00:19:52.342 DEBUG 16584 --- [restartedMain] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {application=com.iisi.Application$$EnhancerBySpringCGLIB$$d65cac8d@551d93fb, securityConfig=com.iisi.config.SecurityConfig$$EnhancerBySpringCGLIB$$eceadcb@1e57b460, propertySourcesPlaceholderConfigurer=org.springframework.context.support.PropertySourcesPlaceholderConfigurer@64d2c328}
+2021-12-24 00:19:52.373  INFO 16584 --- [restartedMain] com.iisi.Application                     : Started Application in 5.338 seconds (JVM running for 6.997)
+2021-12-24 00:19:52.402 ERROR 16584 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: relation "oda.cabinet_server" does not exist
+  Position: 651
+2021-12-24 00:19:52.419 ERROR 16584 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.iisi.Application.main(Application.java:17) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:281) ~[spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255) ~[spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:528) ~[spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:154) ~[spring-tx-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178) ~[spring-data-jpa-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at com.sun.proxy.$Proxy144.findAll(Unknown Source) ~[na:na]
+	at com.iisi.config.runner.StartupVerification.verifyCabinetState(StartupVerification.java:32) ~[classes/:na]
+	at com.iisi.config.runner.StartupVerification.run(StartupVerification.java:28) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	... 10 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:103) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2341) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2094) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2056) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:953) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:350) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2887) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2869) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2701) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.Loader.list(Loader.java:2696) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:506) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:219) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1415) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1565) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1533) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.query.Query.getResultList(Query.java:165) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getResultList(CriteriaQueryTypeQueryAdapter.java:76) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:355) ~[spring-data-jpa-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367) ~[spring-tx-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) ~[spring-tx-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 20 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "oda.cabinet_server" does not exist
+  Position: 651
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.16.jar:42.2.16]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.16.jar:42.2.16]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323) ~[postgresql-42.2.16.jar:42.2.16]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:473) ~[postgresql-42.2.16.jar:42.2.16]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:393) ~[postgresql-42.2.16.jar:42.2.16]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164) ~[postgresql-42.2.16.jar:42.2.16]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:114) ~[postgresql-42.2.16.jar:42.2.16]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57) ~[hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	... 56 common frames omitted
+
+2021-12-24 11:27:07.857  INFO 18848 --- [restartedMain] com.iisi.Application                     : Starting Application on LAPTOP-VD4QMPKA with PID 18848 (E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source\target\classes started by ADMIN in E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source)
+2021-12-24 11:27:07.857 DEBUG 18848 --- [restartedMain] com.iisi.Application                     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-12-24 11:27:07.857  INFO 18848 --- [restartedMain] com.iisi.Application                     : No active profile set, falling back to default profiles: default
+2021-12-24 11:27:13.124 DEBUG 18848 --- [restartedMain] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {application=com.iisi.Application$$EnhancerBySpringCGLIB$$5bbda070@4503b1ef, securityConfig=com.iisi.config.SecurityConfig$$EnhancerBySpringCGLIB$$942fa1ae@10d368fb, propertySourcesPlaceholderConfigurer=org.springframework.context.support.PropertySourcesPlaceholderConfigurer@9ff3c53}
+2021-12-24 11:27:13.171  INFO 18848 --- [restartedMain] com.iisi.Application                     : Started Application in 5.674 seconds (JVM running for 6.904)
+2021-12-24 11:39:21.330 DEBUG 18848 --- [http-nio-9000-exec-6] lsExpirationAuthenticationSuccessHandler : -------------- start credentials expiration check ----------------
+2021-12-24 11:39:21.330 DEBUG 18848 --- [http-nio-9000-exec-6] lsExpirationAuthenticationSuccessHandler : principal: User{id=1, username='admin', name='Administrator', email='null', description='System default administrator', role=ADMIN, enabled=true, credentialsNonExpired=true, accountNonExpired=true, accountNonLocked=true, creationDate=2021-12-24T11:20:22.807265+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T11:20:22.807265+07:00[Asia/Bangkok]}
+2021-12-24 11:39:21.343 DEBUG 18848 --- [http-nio-9000-exec-6] lsExpirationAuthenticationSuccessHandler : This account is fine.
+2021-12-24 11:39:21.344 DEBUG 18848 --- [http-nio-9000-exec-6] lsExpirationAuthenticationSuccessHandler : -------------- end credentials expiration check ------------------
+2021-12-24 13:46:30.660 DEBUG 18848 --- [http-nio-9000-exec-3] c.i.c.r.RetrievingManagementController   : taskId: 0, filePath: null, serialNo: null, startDate: null, endDate: null, pageable: Page request [number: 0, size 50, sort: UNSORTED]
+2021-12-24 13:46:30.681 DEBUG 18848 --- [http-nio-9000-exec-3] c.i.c.r.RetrievingManagementController   : task id size: 0
+2021-12-24 15:14:04.819  INFO 18848 --- [http-nio-9000-exec-8] c.i.c.m.CabinetServerController          : User 'admin' going to ping ip: 10.0.0.1
+2021-12-24 15:14:04.821 DEBUG 18848 --- [http-nio-9000-exec-8] c.i.c.m.CabinetServerController          : cabinet server: CabinetServer(id=null, name=cabinet-1, hardwareId=sbz-100, ip=10.0.0.1, remark=test-1, status=null, doorStatus=null, armStatus=null, armPosition=0.0, ledColor=null, rfidStatus=null, remoteUsername=sonbz, remotePassword=sonbz, commandCharset=UTF-8, creationDate=null, lastModifiedDate=null)
+2021-12-24 15:14:04.934  INFO 18848 --- [http-nio-9000-exec-8] c.i.c.m.CabinetServerController          : Get cabinet server hardware id, params: CabinetServer(id=null, name=cabinet-1, hardwareId=sbz-100, ip=10.0.0.1, remark=test-1, status=null, doorStatus=null, armStatus=null, armPosition=0.0, ledColor=null, rfidStatus=null, remoteUsername=sonbz, remotePassword=sonbz, commandCharset=UTF-8, creationDate=null, lastModifiedDate=null)
+2021-12-24 15:14:04.934 DEBUG 18848 --- [http-nio-9000-exec-8] c.i.config.profile.LinuxCommandService   : Get cabinet hardware id command and parameters: [sshpass, -p, sonbz, ssh, -o, StrictHostKeyChecking=no, sonbz@10.0.0.1, "run-ping.bat"]
+2021-12-24 15:14:04.961 ERROR 18848 --- [http-nio-9000-exec-8] c.i.c.m.CabinetServerController          : Cannot run program "sshpass": CreateProcess error=2, The system cannot find the file specified
+
+java.io.IOException: Cannot run program "sshpass": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071) ~[na:na]
+	at java.base/java.lang.Runtime.exec(Runtime.java:589) ~[na:na]
+	at java.base/java.lang.Runtime.exec(Runtime.java:448) ~[na:na]
+	at com.iisi.config.profile.LinuxCommandService.process(LinuxCommandService.java:300) ~[classes/:na]
+	at com.iisi.config.profile.LinuxCommandService.touchCabinetServer(LinuxCommandService.java:120) ~[classes/:na]
+	at com.iisi.controller.maintenance.CabinetServerController.ping(CabinetServerController.java:134) ~[classes/:na]
+	at com.iisi.controller.maintenance.CabinetServerController$$FastClassBySpringCGLIB$$b7587bf5.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69) ~[spring-security-core-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at com.iisi.controller.maintenance.CabinetServerController$$EnhancerBySpringCGLIB$$58193525.ping(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:65) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:478) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:154) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107) ~[na:na]
+	... 106 common frames omitted
+
+2021-12-24 15:24:50.645 DEBUG 18848 --- [http-nio-9000-exec-6] c.i.c.m.TesterSettingController          : module oid: M201807192103795091, slot oid: H201807192105795140, state: N
+2021-12-24 15:24:50.659  WARN 18848 --- [http-nio-9000-exec-6] c.i.c.p.OnlineTesterManagerProfile       : immediate fail : not found S0003 host
+2021-12-24 15:25:19.979 DEBUG 18848 --- [http-nio-9000-exec-10] c.i.c.m.CabinetManagementController      : scan cabinet server(1)
+2021-12-24 15:25:19.982  INFO 18848 --- [http-nio-9000-exec-10] c.i.c.m.CabinetManagementController      : Lock cabinet scan status.
+2021-12-24 15:25:19.982 DEBUG 18848 --- [http-nio-9000-exec-10] c.i.c.m.CabinetManagementController      : find cabinet server(1) and going to scan: CabinetServer(id=1, name=cabinet-1, hardwareId=sbz-100, ip=10.0.0.1, remark=test-1, status=READY, doorStatus=null, armStatus=null, armPosition=0.0, ledColor=null, rfidStatus=null, remoteUsername=NTZp9/1yqmp4qb9uKrh+1A==, remotePassword=NTZp9/1yqmp4qb9uKrh+1A==, commandCharset=UTF-8, creationDate=2021-12-24T15:14:14.488065+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T15:14:14.488065+07:00[Asia/Bangkok])
+2021-12-24 15:25:20.335 DEBUG 18848 --- [Thread-19] c.i.config.profile.LinuxCommandService   : Scan cabinet server command and parameters: [sshpass, -p, sonbz, ssh, -o, StrictHostKeyChecking=no, sonbz@10.0.0.1, "run-scan.bat"]
+2021-12-24 15:25:20.358 ERROR 18848 --- [Thread-19] c.i.c.m.CabinetManagementController      : Could not execute [sshpass, -p, sonbz, ssh, -o, StrictHostKeyChecking=no, sonbz@10.0.0.1, "run-scan.bat"]. Error=2, The system cannot find the file specified
+
+org.zeroturnaround.exec.ProcessInitException: Could not execute [sshpass, -p, sonbz, ssh, -o, StrictHostKeyChecking=no, sonbz@10.0.0.1, "run-scan.bat"]. Error=2, The system cannot find the file specified
+	at org.zeroturnaround.exec.ProcessInitException.newInstance(ProcessInitException.java:80) ~[zt-exec-1.12.jar:na]
+	at org.zeroturnaround.exec.ProcessExecutor.invokeStart(ProcessExecutor.java:1002) ~[zt-exec-1.12.jar:na]
+	at org.zeroturnaround.exec.ProcessExecutor.startInternal(ProcessExecutor.java:970) ~[zt-exec-1.12.jar:na]
+	at org.zeroturnaround.exec.ProcessExecutor.execute(ProcessExecutor.java:906) ~[zt-exec-1.12.jar:na]
+	at com.iisi.config.profile.LinuxCommandService.scanCabinet(LinuxCommandService.java:148) ~[classes/:na]
+	at com.iisi.controller.monitor.CabinetManagementController.lambda$scan$1(CabinetManagementController.java:103) ~[classes/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.io.IOException: Cannot run program "sshpass": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071) ~[na:na]
+	at org.zeroturnaround.exec.ProcessExecutor.invokeStart(ProcessExecutor.java:997) ~[zt-exec-1.12.jar:na]
+	... 5 common frames omitted
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:478) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:154) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107) ~[na:na]
+	... 7 common frames omitted
+
+2021-12-24 15:25:20.374  INFO 18848 --- [Thread-19] c.i.c.m.CabinetManagementController      : Unlock cabinet scan status.
+2021-12-24 15:26:31.124 DEBUG 18848 --- [http-nio-9000-exec-2] c.i.c.m.TesterSettingController          : module oid: M201807192103795091, slot oid: H201807192105795139, state: N
+2021-12-24 15:26:31.131  WARN 18848 --- [http-nio-9000-exec-2] c.i.c.p.OnlineTesterManagerProfile       : immediate fail : not found S0003 host
+2021-12-24 15:26:43.735 DEBUG 18848 --- [http-nio-9000-exec-3] c.i.c.m.TesterSettingController          : module oid: M201807192103795091, slot oid: H201807192105795139, state: R
+2021-12-24 15:26:43.740  WARN 18848 --- [http-nio-9000-exec-3] c.i.c.p.OnlineTesterManagerProfile       : reload fail : not found S0003 host
+2021-12-24 15:27:18.903 DEBUG 18848 --- [http-nio-9000-exec-4] c.i.c.m.TesterSettingController          : module oid: M201807192103795091, slot oid: H201807192105795148, state: N
+2021-12-24 15:27:18.909  WARN 18848 --- [http-nio-9000-exec-4] c.i.c.p.OnlineTesterManagerProfile       : immediate fail : not found S0003 host
+2021-12-24 15:28:18.722 DEBUG 18848 --- [http-nio-9000-exec-10] c.i.c.m.BackupSettingController          : COMPRESSIBLE:true
+2021-12-24 16:17:49.606 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : -------------- start credentials expiration check ----------------
+2021-12-24 16:17:49.607 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : principal: User{id=2, username='sonbz1', name='son', email='sonnt86@fsoft.com.vn', description='', role=MANAGER, enabled=true, credentialsNonExpired=true, accountNonExpired=true, accountNonLocked=true, creationDate=2021-12-24T16:10:08.316912+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T16:10:08.316912+07:00[Asia/Bangkok]}
+2021-12-24 16:17:49.608 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : This account is fine.
+2021-12-24 16:17:49.612 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : -------------- end credentials expiration check ------------------
+2021-12-24 16:18:21.860 DEBUG 18848 --- [http-nio-9000-exec-9] lsExpirationAuthenticationSuccessHandler : -------------- start credentials expiration check ----------------
+2021-12-24 16:18:21.860 DEBUG 18848 --- [http-nio-9000-exec-9] lsExpirationAuthenticationSuccessHandler : principal: User{id=3, username='sonbz2', name='son', email='sonnt86@fsoft.com.vn', description='', role=OPERATOR, enabled=true, credentialsNonExpired=true, accountNonExpired=true, accountNonLocked=true, creationDate=2021-12-24T16:10:46.240452+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T16:10:46.240452+07:00[Asia/Bangkok]}
+2021-12-24 16:18:21.860 DEBUG 18848 --- [http-nio-9000-exec-9] lsExpirationAuthenticationSuccessHandler : This account is fine.
+2021-12-24 16:18:21.860 DEBUG 18848 --- [http-nio-9000-exec-9] lsExpirationAuthenticationSuccessHandler : -------------- end credentials expiration check ------------------
+2021-12-24 16:18:35.885 DEBUG 18848 --- [http-nio-9000-exec-7] lsExpirationAuthenticationSuccessHandler : -------------- start credentials expiration check ----------------
+2021-12-24 16:18:35.885 DEBUG 18848 --- [http-nio-9000-exec-7] lsExpirationAuthenticationSuccessHandler : principal: User{id=4, username='sonbz3', name='son', email='sonnt86@fsoft.com.vn', description='null', role=GUEST, enabled=true, credentialsNonExpired=true, accountNonExpired=true, accountNonLocked=true, creationDate=2021-12-24T16:11:16.428337+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T16:11:16.428337+07:00[Asia/Bangkok]}
+2021-12-24 16:18:35.885 DEBUG 18848 --- [http-nio-9000-exec-7] lsExpirationAuthenticationSuccessHandler : This account is fine.
+2021-12-24 16:18:35.885 DEBUG 18848 --- [http-nio-9000-exec-7] lsExpirationAuthenticationSuccessHandler : -------------- end credentials expiration check ------------------
+2021-12-24 16:19:02.632 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : -------------- start credentials expiration check ----------------
+2021-12-24 16:19:02.632 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : principal: User{id=1, username='admin', name='Administrator', email='null', description='System default administrator', role=ADMIN, enabled=true, credentialsNonExpired=true, accountNonExpired=true, accountNonLocked=true, creationDate=2021-12-24T11:20:22.807265+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T11:20:22.807265+07:00[Asia/Bangkok]}
+2021-12-24 16:19:02.632 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : This account is fine.
+2021-12-24 16:19:02.633 DEBUG 18848 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : -------------- end credentials expiration check ------------------
+2021-12-24 17:36:21.367  INFO 19132 --- [restartedMain] com.iisi.Application                     : Starting Application on LAPTOP-VD4QMPKA with PID 19132 (E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source\target\classes started by ADMIN in E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source)
+2021-12-24 17:36:21.367 DEBUG 19132 --- [restartedMain] com.iisi.Application                     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-12-24 17:36:21.367  INFO 19132 --- [restartedMain] com.iisi.Application                     : No active profile set, falling back to default profiles: default
+2021-12-24 17:36:27.028 DEBUG 19132 --- [restartedMain] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {application=com.iisi.Application$$EnhancerBySpringCGLIB$$27ecf30a@5a3606b8, securityConfig=com.iisi.config.SecurityConfig$$EnhancerBySpringCGLIB$$605ef448@2b38c098, propertySourcesPlaceholderConfigurer=org.springframework.context.support.PropertySourcesPlaceholderConfigurer@40423962}
+2021-12-24 17:36:27.060  INFO 19132 --- [restartedMain] com.iisi.Application                     : Started Application in 6.041 seconds (JVM running for 8.164)
+2021-12-24 17:37:05.762 DEBUG 19132 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : -------------- start credentials expiration check ----------------
+2021-12-24 17:37:05.763 DEBUG 19132 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : principal: User{id=1, username='admin', name='Administrator', email='null', description='System default administrator', role=ADMIN, enabled=true, credentialsNonExpired=true, accountNonExpired=true, accountNonLocked=true, creationDate=2021-12-24T11:20:22.807265+07:00[Asia/Bangkok], lastModifiedDate=2021-12-24T11:20:22.807265+07:00[Asia/Bangkok]}
+2021-12-24 17:37:05.779 DEBUG 19132 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : This account is fine.
+2021-12-24 17:37:05.780 DEBUG 19132 --- [http-nio-9000-exec-10] lsExpirationAuthenticationSuccessHandler : -------------- end credentials expiration check ------------------
+2021-12-24 17:37:59.330  INFO 8 --- [restartedMain] com.iisi.Application                     : Starting Application on LAPTOP-VD4QMPKA with PID 8 (E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source\target\classes started by ADMIN in E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source)
+2021-12-24 17:37:59.330 DEBUG 8 --- [restartedMain] com.iisi.Application                     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-12-24 17:37:59.330  INFO 8 --- [restartedMain] com.iisi.Application                     : No active profile set, falling back to default profiles: default
+2021-12-24 17:38:04.673 DEBUG 8 --- [restartedMain] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {application=com.iisi.Application$$EnhancerBySpringCGLIB$$226af8d9@35839ee7, securityConfig=com.iisi.config.SecurityConfig$$EnhancerBySpringCGLIB$$5adcfa17@450e956a, propertySourcesPlaceholderConfigurer=org.springframework.context.support.PropertySourcesPlaceholderConfigurer@a69eb7}
+2021-12-24 17:38:04.704  INFO 8 --- [restartedMain] com.iisi.Application                     : Started Application in 5.736 seconds (JVM running for 7.142)
+2021-12-24 17:39:20.742  INFO 13028 --- [restartedMain] com.iisi.Application                     : Starting Application on LAPTOP-VD4QMPKA with PID 13028 (E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source\target\classes started by ADMIN in E:\work_and_code\FPT\SRMS\ODA_component_reuse\ODA_jar_source\oda-source)
+2021-12-24 17:39:20.742 DEBUG 13028 --- [restartedMain] com.iisi.Application                     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-12-24 17:39:20.742  INFO 13028 --- [restartedMain] com.iisi.Application                     : No active profile set, falling back to default profiles: default
+2021-12-24 17:39:25.922 DEBUG 13028 --- [restartedMain] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {application=com.iisi.Application$$EnhancerBySpringCGLIB$$8df84bc8@22e03e96, securityConfig=com.iisi.config.SecurityConfig$$EnhancerBySpringCGLIB$$c66a4d06@16cbc980, propertySourcesPlaceholderConfigurer=org.springframework.context.support.PropertySourcesPlaceholderConfigurer@53ba8b83}
+2021-12-24 17:39:25.953  INFO 13028 --- [restartedMain] com.iisi.Application                     : Started Application in 5.538 seconds (JVM running for 6.936)
